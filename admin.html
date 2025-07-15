@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive User Table</title>
+    <link rel="stylesheet" href="admin.css">
+    
+</head>
+<body>
+    <button class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="overlay"></div>
+
+    <div class="container">
+        <h2>Dashboard</h2>
+        <p>welcome to admin dashboard</p>
+        <nav>
+            <ul>
+                <li><a href="#user">Users</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content" id="User">
+        <div id="totaluser">
+            <h4>All Users</h4>
+            <p>Total Users: <strong>8</strong></p>
+        </div>
+
+        <div class="table-container">
+            <!-- Desktop/Tablet Table View -->
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-table-body">
+                       
+                
+                        <tr>
+                            <td>001</td>
+                            <td>Mike Davis</td>
+                            <td><span >User</span></td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Emily Wilson</td>
+                            <td><span >User</span></td>
+                        </tr>
+                        <tr>
+                            <td>003</td>
+                            <td>David Brown</td>
+                            <td><span>User</span></td>
+                        </tr>
+                        <tr>
+                            <td>004</td>
+                            <td>Lisa Anderson</td>
+                            <td><span>Admin</span></td>
+                        </tr>
+                        <tr>
+                            <td>005</td>
+                            <td>Robert Taylor</td>
+                            <td><span>User</span></td>
+                        </tr>
+                        <tr>
+                            <td>006</td>
+                            <td>Jennifer Martinez</td>
+                            <td><span>User</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mobile Card View -->
+            <div class="mobile-cards">
+                <div class="user-card">
+                    <div class="card-header">
+                        <div class="user-name">John Smith</div>
+                        <div class="user-id">ID: 001</div>
+                    </div>
+                    <div class="user-role">
+                        <span class="role-badge role-admin">Admin</span>
+                    </div>
+                </div>
+
+                <div class="user-card">
+                    <div class="card-header">
+                        <div class="user-name">Sarah Johnson</div>
+                        <div class="user-id">ID: 002</div>
+                    </div>
+                    <div class="user-role">
+                        <span class="role-badge role-user">User</span>
+                    </div>
+                </div>
+
+                <div class="user-card">
+                    <div class="card-header">
+                        <div class="user-name">Mike Davis</div>
+                        <div class="user-id">ID: 003</div>
+                    </div>
+                    <div class="user-role">
+                        <span class="role-badge role-moderator">Moderator</span>
+                    </div>
+                </div>
+
+                <div class="user-card">
+                    <div class="card-header">
+                        <div class="user-name">Emily Wilson</div>
+                        <div class="user-id">ID: 004</div>
+                    </div>
+                    <div class="user-role">
+                        <span class="role-badge role-user">User</span>
+                    </div>
+                </div>
+
+                <div class="user-card">
+                    <div class="card-header">
+                        <div class="user-name">David Brown</div>
+                        <div class="user-id">ID: 005</div>
+                    </div>
+                    <div class="user-role">
+                        <span class="role-badge role-guest">Guest</span>
+                    </div>
+                </div>
+
+                <div class="user-card">
+                    <div class="card-header">
+                        <div class="user-name">Lisa Anderson</div>
+                        <div class="user-id">ID: 006</div>
+                    </div>
+                    <div class="user-role">
+                        <span class="role-badge role-admin">Admin</span>
+                    </div>
+                </div>
+
+                <div class="user-card">
+                    <div class="card-header">
+                        <div class="user-name">Robert Taylor</div>
+                        <div class="user-id">ID: 007</div>
+                    </div>
+                    <div class="user-role">
+                        <span class="role-badge role-user">User</span>
+                    </div>
+                </div>
+
+                <div class="user-card">
+                    <div class="card-header">
+                        <div class="user-name">Jennifer Martinez</div>
+                        <div class="user-id">ID: 008</div>
+                    </div>
+                    <div class="user-role">
+                        <span class="role-badge role-moderator">Moderator</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const container = document.querySelector('.container');
+        const overlay = document.querySelector('.overlay');
+
+        menuToggle?.addEventListener('click', () => {
+            container.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+
+        overlay?.addEventListener('click', () => {
+            container.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        // Close mobile menu when clicking on navigation links
+        const navLinks = document.querySelectorAll('.container ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                container.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
