@@ -19,6 +19,7 @@
       <ul>
         <li><a href="#user">Users</a></li>
       </ul>
+      <button id="logout-btn">Logout</button>
     </nav>
   </div>
 
@@ -107,6 +108,13 @@
       cardContainer.appendChild(card);
     });
   });
+
+  document.getElementById("logout-btn").addEventListener("click", () => {
+    localStorage.removeItem("loggedInUser");
+    alert("Logged out successfully");
+    window.location.href = "./index.html"; 
+  });
+
 </script>
 
 </body>
