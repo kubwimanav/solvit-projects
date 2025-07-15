@@ -1,11 +1,97 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, blueviolet, rgb(58, 58, 209));
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            width: 400px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+
+        .h-login {
+            color: rgb(34, 34, 34);
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            text-align: left;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input{
+            margin-top: 5px;
+            margin-bottom: 15px;
+            height: 45px;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;}
+        
+        select {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            height: 45px;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            height: 45px;
+            background-color: blueviolet;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer; 
+        }
+
+        button:hover {
+            background-color: indigo;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <h1 class="h-login">Login</h1>
+        <form action="" id="form-data">
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="Enter username" id="username" required>
+
+            <label for="passwordid">Password</label>
+            <input type="password" name="password" placeholder="Enter password" id="passwordid" required>
+
+            <label for="role">Role</label>
+            <select name="role" id="role" required>
+                <option value="">Select Role</option>
+                <option value="admin">Admin</option> 
+            </select>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </body>
 </html>
