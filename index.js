@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const username = document.getElementById("username").value.trim();
       const password = document.getElementById("passwordid").value.trim();
       const users = JSON.parse(localStorage.getItem("users")) || [];
-      const user = users.find(users => users.username === username && u.password === password);
+      const user = users.find(users => users.username === username && users.password === password);
       if (user) {
         localStorage.setItem("loggedInUser", JSON.stringify(user));
         alert("login successfully");
