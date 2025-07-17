@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Author Dashboard</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="author.css" />
+  <title>Author Dashboard</title>
 </head>
 <body>
-    <div class="container">
-        <div class="title-blog">
-            <h1>Create blogs</h1>
-        </div>
-        <form id="blog-form">
-            <div>
-                <label>Title</label>
-                <input type="text" name="title" id="titles" placeholder="Enter Title of blog">
-            </div>
-            <div>
-                <label>Content</label>
-                <textarea name="content" id="contentid"></textarea>
-            </div>
-            <div>
-                <label>Image</label>
-                <input type="text" name="imageUrl" id="imageIdUrl" placeholder="Enter URL https://thumbor.forbes.">
-            </div>
-            <div>
-                <button type="submit" class="blog-btn"> Create blog</button>
-            </div>
-        </form>
+  <div class="container">
+    <div class="title-blog">
+      <h1>Create Blog</h1>
     </div>
-    <script src="./author.js"></script>
+    <form id="blog-form">
+      <label>Title</label>
+      <input type="text" id="titles" placeholder="Enter Title of blog" />
+
+      <label>Content</label>
+      <textarea id="contentid" placeholder="Write your blog here..."></textarea>
+
+      <label>Image URL</label>
+      <input type="text" id="imageIdUrl" placeholder="https://..." />
+
+      <button type="submit" class="blog-btn">Create Blog</button>
+    </form>
+
+    <div class="post-list" id="post-list"></div>
+  </div>
+
+  <script src="author.js"></script>
 </body>
 </html>
