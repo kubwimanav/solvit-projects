@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!loggedInUser || loggedInUser.role !== "author") {
     alert("Access denied. Authors only.");
-    window.location.href = "login.html";
+    window.location.href = "index.html";
     return;
   }
 
