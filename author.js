@@ -63,4 +63,27 @@ document.addEventListener("DOMContentLoaded", () => {
       postList.appendChild(postEl);
     });
   }
+  // delete post 
+  window.deletePost = function (id) {
+    if (!confirm("Are you sure you want to delete this post?")) return;
+    let posts = JSON.parse(localStorage.getItem("posts")) || [];
+    posts = posts.filter((post) => post.id !== id);
+    localStorage.setItem("posts", JSON.stringify(posts));
+    renderPosts();
+  };
+
+  window.editPost = function (id) {
+    const posts = JSON.parse(localStorage.getItem("posts")) || [];
+    const post = posts.find((p) => p.id === id);
+
+    if (!post || post.author !== loggedInUser.username) return;
+
+    document.getElementById("titles").value = post.title;
+    document.getElementById("contentid").value = post.content;
+    document.getElementById("imageIdUrl").value = post.image;
+
+    // Remove old post
+    const updatedPosts = posts.filter((p) => p.id !== id);
+    localStorage.setItem("posts", JSON.stringify(updatedPosts));
+  };
 });
