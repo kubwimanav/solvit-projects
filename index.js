@@ -42,5 +42,5 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Invalid details");
       }
     });
-  }
+  } 
 });
